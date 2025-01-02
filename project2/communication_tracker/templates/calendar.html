@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Communication Calendar</h2>
+<ul>
+    {% for log in logs %}
+    <li>
+        {{ log.company.name }} - {{ log.method.name }} on {{ log.date }}
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

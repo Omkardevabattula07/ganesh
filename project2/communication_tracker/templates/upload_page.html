@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Upload Data</h2>
+
+<h3>Upload Company</h3>
+<form method="POST">
+    {% csrf_token %}
+    <label>Name:</label>
+    <input type="text" name="company_name"><br>
+
+    <label>Location:</label>
+    <input type="text" name="company_location"><br>
+
+    <label>LinkedIn:</label>
+    <input type="url" name="company_linkedin"><br>
+
+    <label>Emails:</label>
+    <textarea name="company_emails"></textarea><br>
+
+    <label>Phones:</label>
+    <textarea name="company_phones"></textarea><br>
+
+    <label>Periodicity:</label>
+    <input type="number" name="company_periodicity"><br>
+
+    <button type="submit" name="company_submit">Add Company</button>
+</form>
+
+<h3>Upload Communication Method</h3>
+<form method="POST">
+    {% csrf_token %}
+    <label>Name:</label>
+    <input type="text" name="method_name"><br>
+
+    <label>Description:</label>
+    <textarea name="method_description"></textarea><br>
+
+    <label>Sequence:</label>
+    <input type="number" name="method_sequence"><br>
+
+    <label>Mandatory:</label>
+    <input type="checkbox" name="method_mandatory"><br>
+
+    <button type="submit" name="method_submit">Add Method</button>
+</form>
+{% endblock %}

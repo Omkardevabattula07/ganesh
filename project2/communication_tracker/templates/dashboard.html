@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Dashboard</h2>
+<table>
+    <tr>
+        <th>Company</th>
+        <th>Emails</th>
+        <th>Phones</th>
+        <th>Periodicity</th>
+        <th>LinkedIn Profile</th>
+    </tr>
+    {% for company in companies %}
+    <tr>
+        <td>{{ company.name }}</td>
+        <td>{{ company.emails }}</td>
+        <td>{{ company.phone_numbers }}</td>
+        <td>{{ company.communication_periodicity }} days</td>
+        <td>
+            <a href="{{ company.linkedin_profile }}" target="_blank">
+                View LinkedIn
+            </a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
